@@ -5,12 +5,11 @@ export default function ThreeScene() {
   const mountRef = useRef(null);
 
   useEffect(() => {
-    // === 1. Scene ===
     const scene = new THREE.Scene();
-    // container that holds all the 3D objects
+    // a stage where all objects will be placed
 
-    // === 2. Camera ===
     const camera = new THREE.PerspectiveCamera(
+      // the eyes of the viewer
       75,
       mountRef.current.clientWidth / mountRef.current.clientHeight,
       0.5,
@@ -22,6 +21,8 @@ export default function ThreeScene() {
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
     });
+
+    // the projector of the scene
     renderer.setSize(
       mountRef.current.clientWidth,
       mountRef.current.clientHeight
@@ -29,15 +30,19 @@ export default function ThreeScene() {
     mountRef.current.appendChild(renderer.domElement);
 
     // --- Optional: Add a basic object
+    // our actor's body
     const geometry = new THREE.BoxGeometry();
+    // the clothes / costume of the actor
     const material = new THREE.MeshBasicMaterial({
       color: 0x00ff00,
       wireframe: true,
     });
+    // the actor itself
     const cube = new THREE.Mesh(geometry, material);
+    // add the actor in the state
     scene.add(cube);
 
-    // === Animation loop ===
+    // actor dancing
     const animate = () => {
       requestAnimationFrame(animate);
 
@@ -47,12 +52,15 @@ export default function ThreeScene() {
 
       renderer.render(scene, camera);
     };
+    // start the dance
     animate();
 
+    //  Cleanup if actor failed ===
     return () => {
       if (mountRef.current && renderer.domElement) {
         mountRef.current.removeChild(renderer.domElement);
       }
+
       renderer.dispose();
     };
   }, []);
