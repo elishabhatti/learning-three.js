@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import * as THREE from "three";
 
 export default function ThreeScene() {
@@ -43,6 +43,7 @@ export default function ThreeScene() {
 
       cube.rotation.x += 0.01;
       cube.rotation.y += 0.01;
+      cube.rotation.z += 0.01;
 
       renderer.render(scene, camera);
     };
