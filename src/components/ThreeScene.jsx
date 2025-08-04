@@ -52,5 +52,5 @@ export default function ThreeScene() {
     };
   }, []);
 
-  return <div style={{ width: "100%", height: "100" }} ref={mountRef} />;
+  return <div style={{ width: "100%", height: "100vh" }} ref={mountRef} />;
 }
