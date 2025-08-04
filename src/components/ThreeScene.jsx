@@ -55,8 +55,21 @@ export default function ThreeScene() {
     // start the dance
     animate();
 
+    function handleResize() {
+      if (!mountRef.current) return;
+      const { clientWidth, clientHeight } = mountRef.current;
+
+      camera.aspect = clientWidth / clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(clientWidth, clientHeight);
+    }
+
+    window.addEventListener("resize", handleResize);
+
     //  Cleanup if actor failed ===
     return () => {
+      window.removeEventListener("resize", handleResize);
+
       if (mountRef.current && renderer.domElement) {
         mountRef.current.removeChild(renderer.domElement);
       }
