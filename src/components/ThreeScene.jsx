@@ -4,7 +4,7 @@ import { OrbitControls } from "three/examples/jsm/Addons.js";
 
 export default function ThreeScene() {
   const mountRef = useRef(null);
-    // a reference to the mount point for the scene
+  // a reference to the mount point for the scene
 
   useEffect(() => {
     const scene = new THREE.Scene();
@@ -88,6 +88,6 @@ export default function ThreeScene() {
       renderer.dispose();
     };
   }, []);
-
+  // return the mount point for the scene
   return <div style={{ width: "100%", height: "100vh" }} ref={mountRef} />;
 }
