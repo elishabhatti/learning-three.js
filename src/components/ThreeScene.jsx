@@ -30,14 +30,14 @@ export default function ThreeScene() {
     );
     mountRef.current.appendChild(renderer.domElement);
 
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableZoom = true;
-    controls.enableDamping = true;
-    controls.rotateSpeed = 0.5;
-    controls.dampingFactor = 0.05;
-    controls.zoomSpeed = 0.8;
-    controls.minDistance = 2;
-    controls.maxDistance = 10;
+    const controls = new OrbitControls(camera, renderer.domElement); // controls for the camera
+    controls.enableZoom = true; // enable zooming
+    controls.enableDamping = true; // smooth movement
+    controls.rotateSpeed = 0.5; // speed of rotation
+    controls.dampingFactor = 0.05; // how smooth the damping is
+    controls.zoomSpeed = 0.8; // speed of zooming
+    controls.minDistance = 2; // minimum zoom distance
+    controls.maxDistance = 10; // maximum zoom distance
 
     // --- Optional: Add a basic object
     // our actor's body
