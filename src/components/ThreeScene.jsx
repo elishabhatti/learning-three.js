@@ -32,6 +32,7 @@ export default function ThreeScene() {
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableZoom = true;
+    controls.enableDamping = true;
 
     // --- Optional: Add a basic object
     // our actor's body
