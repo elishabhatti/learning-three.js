@@ -33,6 +33,7 @@ export default function ThreeScene() {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableZoom = true;
     controls.enableDamping = true;
+    controls.rotateSpeed = 0.5;
 
     // --- Optional: Add a basic object
     // our actor's body
@@ -53,8 +54,6 @@ export default function ThreeScene() {
 
       cube.rotation.x += 0.01;
       cube.rotation.y += 0.01;
-      cube.rotation.z += 0.01;
-
       renderer.render(scene, camera);
     };
     // start the dance
