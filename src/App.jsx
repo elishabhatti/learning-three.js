@@ -1,8 +1,11 @@
 import React from 'react'
+import ThreeScene from './components/ThreeScene'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <ThreeScene/>
+    </div>
   )
 }
 
