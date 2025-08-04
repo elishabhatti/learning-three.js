@@ -34,6 +34,7 @@ export default function ThreeScene() {
     controls.enableZoom = true;
     controls.enableDamping = true;
     controls.rotateSpeed = 0.5;
+    controls.dampingFactor = 0.05;
 
     // --- Optional: Add a basic object
     // our actor's body
