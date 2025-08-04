@@ -7,12 +7,13 @@ export default function ThreeScene() {
   useEffect(() => {
     // === 1. Scene ===
     const scene = new THREE.Scene();
+    // container that holds all the 3D objects
 
     // === 2. Camera ===
     const camera = new THREE.PerspectiveCamera(
       75,
       mountRef.current.clientWidth / mountRef.current.clientHeight,
-      0.1,
+      0.5,
       1000
     );
     camera.position.z = 5;
@@ -28,9 +29,9 @@ export default function ThreeScene() {
     mountRef.current.appendChild(renderer.domElement);
 
     // --- Optional: Add a basic object
-    const geometry = new THREE.BoxGeometry(2, 2, 2);
+    const geometry = new THREE.BoxGeometry();
     const material = new THREE.MeshBasicMaterial({
-      color: "ffffff",
+      color: 0x00ff00,
       wireframe: true,
     });
     const cube = new THREE.Mesh(geometry, material);
