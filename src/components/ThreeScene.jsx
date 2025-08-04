@@ -18,7 +18,9 @@ export default function ThreeScene() {
     camera.position.z = 5;
 
     // === 3. Renderer ===
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
+    });
     renderer.setSize(
       mountRef.current.clientWidth,
       mountRef.current.clientHeight
@@ -27,7 +29,7 @@ export default function ThreeScene() {
 
     // --- Optional: Add a basic object
     const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
     const cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
 
