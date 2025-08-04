@@ -28,8 +28,11 @@ export default function ThreeScene() {
     mountRef.current.appendChild(renderer.domElement);
 
     // --- Optional: Add a basic object
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
+    const geometry = new THREE.BoxGeometry(2, 2, 2);
+    const material = new THREE.MeshBasicMaterial({
+      color: 0x00ff00,
+      wireframe: true,
+    });
     const cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
 
@@ -44,8 +47,6 @@ export default function ThreeScene() {
     };
     animate();
 
-    // === Clean-up (runs when component unmounts) ===
-    // === Clean-up (runs when component unmounts) ===
     return () => {
       if (mountRef.current && renderer.domElement) {
         mountRef.current.removeChild(renderer.domElement);
