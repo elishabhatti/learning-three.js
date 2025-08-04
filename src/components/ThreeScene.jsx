@@ -55,6 +55,8 @@ export default function ThreeScene() {
     // start the dance
     animate();
 
+    // === Resize Handler ===
+    // if the stage is resized, we need to update the camera and renderer
     function handleResize() {
       if (!mountRef.current) return;
       const { clientWidth, clientHeight } = mountRef.current;
