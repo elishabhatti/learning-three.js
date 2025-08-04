@@ -4,6 +4,7 @@ import { OrbitControls } from "three/examples/jsm/Addons.js";
 
 export default function ThreeScene() {
   const mountRef = useRef(null);
+    // a reference to the mount point for the scene
 
   useEffect(() => {
     const scene = new THREE.Scene();
