@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/Addons.js";
 
 export default function ThreeScene() {
   const mountRef = useRef(null);
@@ -28,6 +29,9 @@ export default function ThreeScene() {
       mountRef.current.clientHeight
     );
     mountRef.current.appendChild(renderer.domElement);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableZoom = true;
 
     // --- Optional: Add a basic object
     // our actor's body
