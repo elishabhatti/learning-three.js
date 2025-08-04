@@ -30,7 +30,7 @@ export default function ThreeScene() {
     // --- Optional: Add a basic object
     const geometry = new THREE.BoxGeometry(2, 2, 2);
     const material = new THREE.MeshBasicMaterial({
-      color: 0x00ff00,
+      color: "ffffff",
       wireframe: true,
     });
     const cube = new THREE.Mesh(geometry, material);
