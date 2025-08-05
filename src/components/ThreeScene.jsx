@@ -12,7 +12,7 @@ const ThreeScene = () => {
       0.1, // near
       1000 //far
     );
-    camera.position.z = 3; 
+    camera.position.z = 3;  // putting that object away from the renderer
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(
