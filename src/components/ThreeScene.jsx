@@ -12,9 +12,11 @@ const ThreeScene = () => {
       0.1, // near
       1000 //far
     );
-    camera.position.z = 3;  // putting that object away from the renderer
+    camera.position.z = 3; // putting that object away from the renderer
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true, // smooths edges and shapes for not making the geometry pixelated
+    }); // renders the scene
     renderer.setSize(
       mountRef.current.clientWidth,
       mountRef.current.clientHeight
