@@ -17,22 +17,29 @@ const ThreeScene = () => {
     const renderer = new THREE.WebGLRenderer({
       antialias: true, // smooths edges and shapes for not making the geometry pixelated
     }); // renders the scene
+
     renderer.setSize(
       mountRef.current.clientWidth,
       mountRef.current.clientHeight
     );
+    // append the renderer
     mountRef.current.appendChild(renderer.domElement);
 
+    // the body of actor
     const geometry = new THREE.BoxGeometry();
+    // the costume / clothes of the actor
     const material = new THREE.MeshBasicMaterial({
       color: 0x0077ff,
       wireframe: true,
     });
+    // the actor itself on the stage
     const cube = new THREE.Mesh(geometry, material);
 
+    // actor in the state
     scene.add(cube);
 
     // === Animate ===
+    // the dance of the actor
     const animate = () => {
       cube.rotation.x += 0.01;
       cube.rotation.y += 0.01;
